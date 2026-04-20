@@ -12,7 +12,7 @@ pd.options.mode.chained_assignment = None
 #PART 1 - GDP
 
 #Load Data
-gdp = pd.read_csv(r'C:\Users\kevin\OneDrive\Desktop\Python projects\Unemployment Italy\GDP.csv')
+gdp = pd.read_csv('GDP.csv',skiprows=0, header=None).T   # Read csv, and transpose
 
 #Get rid of columns we don't need
 del gdp["Series Name"]
@@ -22,7 +22,7 @@ del gdp["Country Code"]
 
 
 #Transpose horizontal data
-gdp = pd.read_csv(r'C:\Users\kevin\OneDrive\Desktop\Python projects\Unemployment Italy\GDP.csv', skiprows=0, header=None).T   # Read csv, and transpose
+gdp = pd.read_csv(GDP.csv', skiprows=0, header=None).T   # Read csv, and transpose
 gdp.columns = gdp.iloc[0]
 gdp.drop(5,inplace=True)
 
@@ -74,11 +74,11 @@ plt.show()
 
 #PART 2 - UNEMPLOYMENT
 
-inflation = pd.read_csv(r'C:\Users\kevin\OneDrive\Desktop\Python projects\Unemployment Italy\Inflation 5.csv')
+inflation = pd.read_csv(Inflation 5.csv')
 
 
 #Transpose Data
-inflation = pd.read_csv(r'C:\Users\kevin\OneDrive\Desktop\Python projects\Unemployment Italy\Inflation 5.csv', skiprows=0, header=None).T
+inflation = pd.read_csv(Inflation 5.csv', skiprows=0, header=None).T
 inflation.columns = inflation.iloc[0]
 
 #Messy data, remove first row
