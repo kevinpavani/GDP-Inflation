@@ -11,18 +11,12 @@ pd.options.mode.chained_assignment = None
 
 #PART 1 - GDP
 
-#Load Data
-gdp = pd.read_csv('GDP.csv',skiprows=0, header=None).T   # Read csv, and transpose
-
-#Get rid of columns we don't need
-del gdp["Series Name"]
-del gdp["Series Code"]
-del gdp["Country Name"]
-del gdp["Country Code"]
+#Load Data, read csv and transpose
+gdp = pd.read_csv('GDP.csv',skiprows=0, header=None).T
 
 
 #Transpose horizontal data
-gdp = pd.read_csv(GDP.csv', skiprows=0, header=None).T   # Read csv, and transpose
+gdp = pd.read_csv('GDP.csv', skiprows=0, header=None).T   # Read csv, and transpose
 gdp.columns = gdp.iloc[0]
 gdp.drop(5,inplace=True)
 
@@ -74,11 +68,11 @@ plt.show()
 
 #PART 2 - UNEMPLOYMENT
 
-inflation = pd.read_csv(Inflation 5.csv')
+inflation = pd.read_csv('Inflation 5.csv')
 
 
 #Transpose Data
-inflation = pd.read_csv(Inflation 5.csv', skiprows=0, header=None).T
+inflation = pd.read_csv('Inflation 5.csv', skiprows=0, header=None).T
 inflation.columns = inflation.iloc[0]
 
 #Messy data, remove first row
@@ -86,7 +80,7 @@ inflation = inflation.iloc[1:,]
 
 
 #Get rid of extra columns we don't need
-#inflation.dropna(how='all', axis=1, inplace=True)
+inflation.dropna(how='all', axis=1, inplace=True)
 
 #Rename Columns
 inflation.rename(columns = {'Country Name':'Year', 'Italy':'Inflation'}, inplace=True)
